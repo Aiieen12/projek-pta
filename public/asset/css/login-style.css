@@ -1,0 +1,215 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top right, #d1f4ff, #eafaff);
+}
+
+/* Container utama */
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/background.jpg'); /* jungle bg */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Login card (frosted glass style) */
+.login-box {
+    width: 380px;
+    padding: 40px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 60px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2em;
+}
+
+.login-box form input,
+.login-box form select,
+.login-box form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    color: #333;
+}
+
+.login-box form input::placeholder {
+    color: #555;
+}
+
+.login-box form button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-box form button:hover {
+    background-color: #45a049;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Facebook */
+.icon.facebook {
+    background: #3b5998;
+}
+
+/* Google */
+.icon.google {
+    background: #db4437;
+}
+
+/* Hover effect */
+.icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #c8ffca;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Dino mascot box */
+.dino-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animasi dino (bounce) */
+.dino-img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    animation: dinoBounce 3s ease-in-out infinite;
+    margin-top: 40px; /* tolak kebawah */
+}
+@keyframes dinoBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Animasi bubble ucapan (floating) */
+/* Speech bubble gaya komik */
+.signboard {
+    position: absolute;
+    bottom: calc(100% - 30px); /* letak bubble atas dino */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #333;
+    padding: 14px 22px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    max-width: 260px;
+    text-align: center;
+    animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+/* Ekor bubble bawah tengah */
+.signboard::after {
+    content: '';
+    position: absolute;
+    top: 100%;  /* letak kat bawah bubble */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Animasi bubble */
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -8px);
+    }
+}
+
+.mute-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.mute-btn:hover {
+    transform: scale(1.1);
+    background: #4CAF50;
+    color: white;
+}
+
+
+
