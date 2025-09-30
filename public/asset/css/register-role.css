@@ -1,0 +1,88 @@
+/* Container utama */
+.role-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tajuk */
+.role-container .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.role-container .subtitle {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Flex container utk button */
+.role-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Kad peranan */
+.role-card {
+    flex: 1;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Ikon */
+.role-card i {
+    font-size: 40px;
+    color: #3498db;
+}
+
+/* Hover effect */
+.role-card:hover {
+    transform: translateY(-5px);
+    background: #3498db;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(52,152,219,0.4);
+}
+
+.role-card:hover i {
+    color: #fff;
+}
+
+/* Student card warna khas */
+.role-card.student {
+    border: 2px solid #3498db;
+}
+
+/* Teacher card warna khas */
+.role-card.teacher {
+    border: 2px solid #2ecc71;
+}
+
+.role-card.teacher i {
+    color: #2ecc71;
+}
+
+.role-card.teacher:hover {
+    background: #2ecc71;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(46,204,113,0.4);
+}

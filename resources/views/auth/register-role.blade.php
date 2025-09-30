@@ -1,9 +1,29 @@
-<x-guest-layout>
-    <div class="text-center">
-        <h2 class="text-2xl font-bold mb-4">Choose your role</h2>
-        <div class="space-x-4">
-            <a href="{{ route('register.student') }}" class="btn-custom">Student</a>
-            <a href="{{ route('register.teacher') }}" class="btn-custom">Teacher</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Role</title>
+    <link rel="stylesheet" href="{{ asset('asset/css/register-role.css') }}">
+</head>
+<body>
+    <div class="role-container">
+        <h2 class="title">Choose Your Role</h2>
+        <p class="subtitle">Please select your role to continue registration</p>
+
+        <div class="role-buttons">
+            <a href="{{ route('register.student') }}" class="role-card student">
+                <i class="fas fa-user-graduate"></i>
+                <span>Student</span>
+            </a>
+
+            <a href="{{ route('register.teacher') }}" class="role-card teacher">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Teacher</span>
+            </a>
         </div>
     </div>
-</x-guest-layout>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>
