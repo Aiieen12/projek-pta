@@ -48,7 +48,7 @@
             </div>
 
             <div class="register-link">
-                <p>Don't have an account? <a href="register-role.blade.php">Register</a></p>
+                <p>Don't have an account? <a href="{{ route('register.role') }}">Register</a>
             </div>
         </div>
 
@@ -63,21 +63,61 @@
     </div>
 
     <script>
-        const music = document.getElementById("bg-music");
-        const muteBtn = document.getElementById("mute-btn");
-        const icon = muteBtn.querySelector("i");
+    const music = document.getElementById("bg-music");
+    const muteBtn = document.getElementById("mute-btn");
+    const icon = muteBtn.querySelector("i");
+    const links = document.querySelectorAll('a'); // Pilih semua pautan
 
-        muteBtn.addEventListener("click", () => {
-                music.muted = !music.muted;
+    // Fungsi untuk memulihkan keadaan muzik dari localStorage
+    function restoreMusicState() {
+        const musicTime = localStorage.getItem('musicTime');
+        const isMuted = localStorage.getItem('isMuted') === 'true';
+
+        music.muted = isMuted;
+        if (musicTime) {
+            music.currentTime = parseFloat(musicTime);
+        }
+        updateMuteButton();
+        if (!isMuted) {
+            music.play().catch(e => console.log("Autoplay disekat oleh pelayar"));
+        }
+    }
+
+    // Fungsi untuk mengemas kini ikon butang
+    function updateMuteButton() {
         if (music.muted) {
             icon.classList.remove("fa-volume-up");
             icon.classList.add("fa-volume-mute");
         } else {
             icon.classList.remove("fa-volume-mute");
             icon.classList.add("fa-volume-up");
-            music.play(); // force play selepas unmute
-            }
-        });
-    </script>
+        }
+    }
+    
+    // Fungsi untuk menyimpan keadaan muzik
+    function saveMusicState() {
+        localStorage.setItem('musicTime', music.currentTime);
+        localStorage.setItem('isMuted', music.muted);
+    }
+
+    // Dengar acara apabila tetingkap/tab akan ditutup atau dimuat semula
+    window.addEventListener('beforeunload', saveMusicState);
+
+    // Mula-mula, pulihkan keadaan muzik apabila halaman dimuatkan
+    restoreMusicState();
+
+    // Logik untuk butang Mute/Unmute
+    muteBtn.addEventListener("click", () => {
+        music.muted = !music.muted;
+        updateMuteButton();
+        localStorage.setItem('isMuted', music.muted);
+        if (!music.muted) {
+            music.play();
+        }
+    });
+
+</script>
+</body>
+</html>
 </body>
 </html>
