@@ -27,8 +27,8 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
-                <input type="text" name="username" placeholder="dinoStudent" required>
-                <input type="password" name="password" placeholder="••••••" required>
+                <input type="text" name="username" placeholder="username" required>
+                <input type="password" name="password" placeholder="your password" required>
                 
                 <select name="role" required>
                     <option value="">Pilih peranan</option>

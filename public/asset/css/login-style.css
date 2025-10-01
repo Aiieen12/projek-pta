@@ -38,7 +38,7 @@ body, html {
 
 .login-box h2 {
     margin-bottom: 20px;
-    color: #fff;
+    color: #333; /* Diubah daripada #fff kepada warna gelap */
     font-size: 2em;
 }
 
@@ -111,10 +111,11 @@ body, html {
 .register-link {
     text-align: center;
     margin-top: 20px;
+    color: #333; /* Warna teks "Don't have an account?" */
 }
 
 .register-link a {
-    color: #c8ffca;
+    color: #333; /* Warna pautan "Register" */
     text-decoration: none;
     font-weight: bold;
 }
