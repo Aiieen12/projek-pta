@@ -8,7 +8,7 @@
     <!-- Link ke CSS custom -->
     <link rel="stylesheet" href="{{ asset('asset/css/register-teacher.css') }}">
 </head>
-<body>
+<body style="margin:0; padding:0;">
 
     <div class="register-wrapper">
         <div class="login-card-glass animate-pop">

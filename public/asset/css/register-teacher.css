@@ -4,15 +4,19 @@
 /* 🌈 Background tema dinosaur */
 .register-wrapper {
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: url("../images/background-register-teacher.png") no-repeat center center;
+    background: url("../images/background-register-teacher.png") no-repeat center center fixed,
+                linear-gradient(135deg, #a7f3d0, #d1fae5); /* fallback gradient */
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    padding: 20px;
+    margin: 0;
+    padding: 0;
     animation: fadeInBg 2s ease-in-out;
 }
 @keyframes fadeInBg {

@@ -38,7 +38,7 @@ body, html {
 
 .login-box h2 {
     margin-bottom: 20px;
-    color: #333; /* Diubah daripada #fff kepada warna gelap */
+    color: #333;
     font-size: 2em;
 }
 
@@ -92,17 +92,14 @@ body, html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Facebook */
 .icon.facebook {
     background: #3b5998;
 }
 
-/* Google */
 .icon.google {
     background: #db4437;
 }
 
-/* Hover effect */
 .icon:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -111,11 +108,11 @@ body, html {
 .register-link {
     text-align: center;
     margin-top: 20px;
-    color: #333; /* Warna teks "Don't have an account?" */
+    color: #333;
 }
 
 .register-link a {
-    color: #333; /* Warna pautan "Register" */
+    color: #333;
     text-decoration: none;
     font-weight: bold;
 }
@@ -128,28 +125,23 @@ body, html {
     justify-content: center;
 }
 
-/* Animasi dino (bounce) */
 .dino-img {
     width: 320px;
     max-width: 100%;
     height: auto;
     animation: dinoBounce 3s ease-in-out infinite;
-    margin-top: 40px; /* tolak kebawah */
-}
-@keyframes dinoBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+    margin-top: 40px;
 }
 
-/* Animasi bubble ucapan (floating) */
-/* Speech bubble gaya komik */
+@keyframes dinoBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Speech bubble */
 .signboard {
     position: absolute;
-    bottom: calc(100% - 30px); /* letak bubble atas dino */
+    bottom: calc(100% - 30px);
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
@@ -164,11 +156,10 @@ body, html {
     animation: bubbleFloat 3s ease-in-out infinite;
 }
 
-/* Ekor bubble bawah tengah */
 .signboard::after {
     content: '';
     position: absolute;
-    top: 100%;  /* letak kat bawah bubble */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     border-width: 12px;
@@ -176,14 +167,9 @@ body, html {
     border-color: #fff transparent transparent transparent;
 }
 
-/* Animasi bubble */
 @keyframes bubbleFloat {
-    0%, 100% {
-        transform: translate(-50%, 0);
-    }
-    50% {
-        transform: translate(-50%, -8px);
-    }
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -8px); }
 }
 
 .mute-btn {
@@ -211,6 +197,4 @@ body, html {
     background: #4CAF50;
     color: white;
 }
-
-
 

@@ -53,22 +53,38 @@
         </div>
 
         <!-- Dino Box -->
-        <div class="dino-box">
-            <div class="signboard">
-                Selamat datang ke Mathventure! 🦖
-            </div>
-            <img src="{{ asset('asset/images/dino.png') }}" alt="Dino Mascot" class="dino-img">
+       
+    <div class="dino-box">
+        <div class="signboard" id="signboard">
+            Selamat datang ke Mathventure! 🦖
         </div>
-
+        <img src="{{ asset('asset/images/dino.png') }}" alt="Dino Mascot" class="dino-img">
     </div>
 
     <script>
-    const music = document.getElementById("bg-music");
-    const muteBtn = document.getElementById("mute-btn");
-    const icon = muteBtn.querySelector("i");
-    const links = document.querySelectorAll('a'); // Pilih semua pautan
+        const music = document.getElementById("bg-music");
+        const muteBtn = document.getElementById("mute-btn");
+        const icon = muteBtn.querySelector("i");
 
-    // Fungsi untuk memulihkan keadaan muzik dari localStorage
+        // ✅ Array mesej untuk speech bubble
+        const messages = [
+            "Ready to explore math? ✨",
+            "Let's start an adventure! 🚀",
+            "Solve & collect your badges! 🏆",
+            "Belajar sambil bermain! 📚",
+            "Math is fun with dinosaurs! 🦕"
+        ];
+
+    let msgIndex = 0;
+    const signboard = document.getElementById("signboard");
+
+    // Tukar mesej setiap 4 saat
+    setInterval(() => {
+        msgIndex = (msgIndex + 1) % messages.length;
+        signboard.textContent = messages[msgIndex];
+    }, 4000);
+
+    // === Logik muzik sedia ada ===
     function restoreMusicState() {
         const musicTime = localStorage.getItem('musicTime');
         const isMuted = localStorage.getItem('isMuted') === 'true';
@@ -83,7 +99,6 @@
         }
     }
 
-    // Fungsi untuk mengemas kini ikon butang
     function updateMuteButton() {
         if (music.muted) {
             icon.classList.remove("fa-volume-up");
@@ -94,19 +109,14 @@
         }
     }
     
-    // Fungsi untuk menyimpan keadaan muzik
     function saveMusicState() {
         localStorage.setItem('musicTime', music.currentTime);
         localStorage.setItem('isMuted', music.muted);
     }
 
-    // Dengar acara apabila tetingkap/tab akan ditutup atau dimuat semula
     window.addEventListener('beforeunload', saveMusicState);
-
-    // Mula-mula, pulihkan keadaan muzik apabila halaman dimuatkan
     restoreMusicState();
 
-    // Logik untuk butang Mute/Unmute
     muteBtn.addEventListener("click", () => {
         music.muted = !music.muted;
         updateMuteButton();
@@ -115,8 +125,8 @@
             music.play();
         }
     });
-
 </script>
+
 </body>
 </html>
 </body>
